@@ -9,10 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JokeMVVM"
-        android:name=".ui.MainApplication"
+        android:name=".app.MainApplication"
         >
         <activity
-            android:name=".ui.views.MainActivity"
+            android:name=".app.views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,4 +1,4 @@
-package jn.awto.jokemvvm.data.di
+package jn.awto.jokemvvm.core.di
 
 import dagger.Module
 import dagger.Provides

@@ -1,4 +1,4 @@
-package jn.awto.jokemvvm.ui.viewmodels
+package jn.awto.jokemvvm.app.viewmodels
 
 import androidx.lifecycle.ViewModel
 

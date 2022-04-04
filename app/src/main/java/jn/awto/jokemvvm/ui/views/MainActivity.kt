@@ -1,4 +1,4 @@
-package jn.awto.jokemvvm.ui
+package jn.awto.jokemvvm.ui.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

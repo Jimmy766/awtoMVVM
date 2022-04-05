@@ -6,5 +6,5 @@ import javax.inject.Inject
 class GetJokeUseCase @Inject constructor(
     private val jokeRepository: JokeRepository
 ) {
-    operator fun invoke() = jokeRepository.getJoke();
+    operator fun invoke() = jokeRepository.getJoke()
 }

@@ -1,17 +1,15 @@
 package jn.awto.jokemvvm.app.views
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ProgressBar
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.whenStarted
 import dagger.hilt.android.AndroidEntryPoint
 import jn.awto.jokemvvm.app.viewmodels.JokeViewModel
 import jn.awto.jokemvvm.databinding.ActivityMainBinding
 import jn.awto.jokemvvm.domain.models.Joke
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

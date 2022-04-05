@@ -10,6 +10,7 @@ import jn.awto.jokemvvm.R
 
 class SplashActivity : AppCompatActivity() {
 
+    val SPLASH_DELAY: Long = 2000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
@@ -17,6 +18,6 @@ class SplashActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, MainActivity::class.java))
             finish()
-        }, 2000)
+        }, SPLASH_DELAY)
     }
 }

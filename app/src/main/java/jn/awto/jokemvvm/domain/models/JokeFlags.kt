@@ -23,7 +23,6 @@ class JokeFlags(
     @Expose
     val explicit: Boolean?
 ){
-    // override toString to print the flags in a readable format without the null values , without commas and without variable names
     fun format(): String {
 
         return "${formatVariableName(nsfw,"nsfw")} "+
@@ -37,6 +36,5 @@ class JokeFlags(
     private fun formatVariableName(value:Boolean?, name:String):String{
         return if (value == true) name else ""
     }
-
 
 }

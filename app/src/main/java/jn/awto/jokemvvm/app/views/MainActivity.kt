@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun setupJoke(joke: Joke) {
         with(binding) {
-            setupJokeText.text = joke.setup ?: "Not Received"
-            deliveryJokeText.text = joke.delivery ?: "Not Received"
+            setupJokeText.text = joke.setup ?: joke.joke
+            deliveryJokeText.text = joke.delivery ?: ""
             flagsJokeText.text = if ( joke.flags!=null ) joke.flags.format() else "Not Received"
         }
     }

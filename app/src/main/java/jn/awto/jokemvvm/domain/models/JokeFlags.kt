@@ -34,7 +34,7 @@ class JokeFlags(
                 formatVariableName(explicit,"explicit")
     }
 
-    fun formatVariableName(value:Boolean?,name:String):String{
+    private fun formatVariableName(value:Boolean?, name:String):String{
         return if (value == true) name else ""
     }
 

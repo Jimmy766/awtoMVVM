@@ -2,11 +2,16 @@ package jn.awto.jokemvvm.app.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ProgressBar
 import androidx.activity.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.whenStarted
 import dagger.hilt.android.AndroidEntryPoint
 import jn.awto.jokemvvm.app.viewmodels.JokeViewModel
 import jn.awto.jokemvvm.databinding.ActivityMainBinding
 import jn.awto.jokemvvm.domain.models.Joke
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -17,21 +22,38 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        jokeViewModel.getNextJoke()
+
+        lifecycleScope.launchWhenStarted {
+            jokeViewModel.progress.collect {
+                binding.progressBar.visibility = if (it) ProgressBar.VISIBLE else ProgressBar.GONE
+            }
+        }
+
         jokeViewModel.joke.observe(this) {
             setupJoke(it)
         }
 
         binding.viewContainer.setOnClickListener {
-            jokeViewModel.getNextJoke().observe(this) {
-                setupJoke(it)
-            }
+            clearJoke()
+            jokeViewModel.getNextJoke()
         }
+
+
+
     }
     private fun setupJoke(joke: Joke) {
         with(binding) {
             setupJokeText.text = joke.setup ?: "Not Received"
             deliveryJokeText.text = joke.delivery ?: "Not Received"
             flagsJokeText.text = if ( joke.flags!=null ) joke.flags.format() else "Not Received"
+        }
+    }
+    private fun clearJoke() {
+        with(binding) {
+            setupJokeText.text = ""
+            deliveryJokeText.text = ""
+            flagsJokeText.text = ""
         }
     }
 }

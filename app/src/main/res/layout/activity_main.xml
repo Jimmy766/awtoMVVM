@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4F1497"
-    tools:context=".app.views.MainActivity">
+    tools:context=".app.views.MainActivity"
+    android:id="@+id/viewContainer"
+    >
 
     <TextView
         android:id="@+id/setupJokeText"

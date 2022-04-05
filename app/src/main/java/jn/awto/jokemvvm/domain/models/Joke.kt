@@ -33,5 +33,5 @@ data class Joke(
     val error: Boolean?,
     @SerializedName("flags")
     @Expose
-    val flag: JokeFlag?
+    val flags: JokeFlags?
 )
